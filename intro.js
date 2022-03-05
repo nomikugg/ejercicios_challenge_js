@@ -358,3 +358,18 @@ function myFunctionProp19(a, b){
 
 console.log(myFunctionProp19('java', 'tpi%rcs'))
 console.log(myFunctionProp19('c%ountry', 'edis'))
+
+//EJERCICIO 20
+//sin terminar
+function myFunction(a){
+    count = 0
+    for(let i = 1; i<=a;i++){
+      if(a%i === 0 && a/i === 1 && count === 1){
+        return a
+        count++
+      }else if(i === a){
+        a++
+      }
+    }
+  }
+  console.log()
