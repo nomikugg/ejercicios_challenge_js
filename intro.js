@@ -195,3 +195,166 @@ function myFunction(a) {
 }
 
 //EJERCICIO 13
+
+// Write a function that takes two strings (a and b) as arguments
+// Return the number of times a occurs in b
+
+function myFunctionProp13(b,a){
+    count =0
+    for(let i = 0; i<a.length; i++){
+      if(a[i] === b){
+        count++
+      }
+    }
+      return count
+  }
+  console.log(myFunctionProp13('n','Hola como estan, son unos locos'))
+
+  // Returns an empty array
+''.split(''); // returns []
+
+// Returns an array with an empty string
+''.split() // returns [""]
+
+function myFunctionCop13(a, b) {
+    return b.split(a).length-1
+  }
+console.log(myFunctionCop13('?', 'how many times does the character ? occur in? this sentence??'))
+
+
+//EJERCICIO 14
+// Write a function that takes a number (a) as argument
+// If a is a whole number (has no decimal place), return true
+// Otherwise, return false
+
+
+function myFunctionCop14(a) {
+   
+    return a-Math.floor(a)===0
+ }
+
+ //EJERCICIO 15
+
+// Write a function that takes two numbers (a and b) as arguments
+// If a is smaller than b, divide a by b
+// Otherwise, multiply both numbers
+// Return the resulting value
+
+function myFunctionCop15(a, b) {
+    return a < b ? a / b : a * b
+  }
+
+
+//REPASOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+//*************************             INDEXOF      ************** */
+//Encontrar todas las apariciones de un elemento
+var indices = [];
+var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+var element = 'a';
+var idx = array.indexOf(element);
+while (idx != -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices);
+// [0, 2, 4]
+// Copy to Clipboard
+// Encontrar si un elemento existe en la matriz o no y actualizar la matriz
+function updateVegetablesCollection (veggies, veggie) {
+    if (veggies.indexOf(veggie) === -1) {
+        veggies.push(veggie);
+        console.log('La nueva colección de vegetales es: ' + veggies);
+    } else if (veggies.indexOf(veggie) > -1) {
+        console.log(veggie + ' ya existe en la colección de verduras.');
+    }
+}
+
+
+var veggies = ['patata', 'tomate', 'chiles', 'pimientoverde'];
+
+updateVegetablesCollection(veggies, 'espinaca');
+// La nueva colección de verduras es : patata, tomate, chiles, pimientoverde, espinaca
+updateVegetablesCollection(veggies, 'espinaca');
+// La espinaca ya existe en la colección de verduras.
+
+
+//EJERCICIO 16 
+// Write a function that takes two strings (a and b) as arguments
+// If a contains b, append b to the beginning of a
+// If not, append it to the end
+// Return the concatenation
+function myFunctionProp16(a, b){
+    return a.includes(b)? b+a:a +b
+}
+console.log(myFunctionProp16('cheese', 'e'))
+
+//otra forma es usar el metodo indexOf()
+function myFunctionCop16(a, b) {
+    return a.indexOf(b) === -1 ? a + b : b + a
+}
+console.log(myFunctionCop16('Hola','s'))
+
+//EJERCICIO 17
+
+// Write a function that takes a number (a) as argument
+// Round a to the 2nd digit after the comma
+// Return the rounded number
+function myFunctionCop17(a){
+    return Number(a.toFixed(2))
+}
+console.log(myFunctionCop17(4.57869))
+
+
+//EJERCICIO 18
+
+// Write a function that takes a number (a) as argument
+// Split a into its individual digits and return them in an array
+// Tipp: you might want to change the type of the number for the splitting
+
+function myFunctionProp18(a){
+    return a.toString().split('').map(Number)
+  }
+  console.log(myFunctionProp18(15))
+  
+  
+  
+  function myFunctionCop18( a ) {
+    const string = a + '';
+    const strings = string.split('');
+    return strings.map(digit => Number(digit))
+  }
+  console.log(myFunctionCop18(1545))
+
+
+// EJERCICIO 19
+// It seems like something happened to these strings
+// Can you figure out how to clear up the chaos?
+// Write a function that joins these strings together such that they form the following words:
+// 'Javascript', 'Countryside', and 'Downtown'
+// You might want to apply basic JS string methods such as replace(), split(), slice() etc
+
+
+function myFunctionCop19(a, b) {
+    const func = x => x.replace('%','');
+    const first = func(a);
+    const second = func(b).split('').reverse().join('');
+    return first.charAt(0).toUpperCase() + first.slice(1) + second;
+}
+console.log(myFunctionCop19('java', 'tpi%rcs'))
+console.log(myFunctionCop19('c%ountry', 'edis'))
+
+//Mi manera de resolverlo
+function myFunctionProp19(a, b){
+    const func = (x)=>{
+        return x.replace('%','')
+    }
+    //const func = x => x.replace('%','');
+    nuevoB = func(b).split('').reverse().join('')
+    nuevoA = func(a)
+    str = nuevoA+nuevoB
+    return str.replace(str[0], str[0].toUpperCase())
+}
+
+
+console.log(myFunctionProp19('java', 'tpi%rcs'))
+console.log(myFunctionProp19('c%ountry', 'edis'))
